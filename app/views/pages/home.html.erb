@@ -8,14 +8,14 @@
       <div class="well">
         <h2 class="text-center">Patientenanmeldung</h2>
         <p>Melden Sie sich mit Ihrer 10-stelligen Fallnummer an und helfen Sie uns das Eigenübungsprogramm für Sie und zukünftige Patienten zu verbessern!</p>
-        <%= link_to "Patientenanmeldung", "#", class: 'btn btn-success btn-lg btn-block' %>
+        <%= link_to "Patientenanmeldung", new_user_registration_path(plan: @pro_plan.id), class: 'btn btn-success btn-lg btn-block' %>
       </div>
     </div>
     <div class="col-md-6">
       <div class="well">
         <h2 class="text-center">Anonyme Anmeldung</h2>
         <p>Melden Sie sich hier anonym an. Sie haben den vollen Zugriff auf die Eigenübungsvideos. </p>
-        <%= link_to "Anonyme Anmeldung", "#", class: 'btn btn-primary btn-lg btn-block' %>
+        <%= link_to "Anonyme Anmeldung", new_user_registration_path(plan: @basic_plan.id), class: 'btn btn-primary btn-lg btn-block' %>
       </div>
     </div>
   </div>

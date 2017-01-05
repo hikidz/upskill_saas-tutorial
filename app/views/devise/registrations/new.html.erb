@@ -1,32 +1,21 @@
 <div class="container">
   <div class="row">
     <div class="col-md-4 col-md-offset-4">
-      <div class="well">
+      <div class="text-center">
         <% if params[:plan] == '2' %>
-        <h2>Patienten-Anmeldung</h2>
+          <h1>Patienten-Anmeldung</h1>
+          <p>Melden Sie sich mit Ihrer 10-stelligen Fallnummer an und helfen Sie uns das Eigenübungsprogramm für Sie und zukünftige Patienten zu verbessern!</p>
         <% else %>
-        <h2>Anonyme Anmeldung</h2>
+          <h1>Anonyme Anmeldung</h1>
+          <p>Melden Sie sich hier anonym an. Sie haben den vollen Zugriff auf die Eigenübungsvideos.</p>
         <% end %>
-        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-          <%= devise_error_messages! %>
-          <div class="field form-group">
-            <%= f.label :email %>
-            <%= f.email_field :email, autofocus: true, class: 'form-control' %>
-          </div>
-          <div class="field form-group">
-            <%= f.label :password %>
-            <% if @minimum_password_length %>
-            <em>(<%= @minimum_password_length %> characters minimum)</em>
-            <% end %>
-            <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
-          </div>
-          <div class="field form-group">
-            <%= f.label :password_confirmation %>
-            <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
-          </div>
-          <div class="actions form-group">
-            <%= f.submit "Registrieren", class: 'btn btn-success' %>
-          </div>
+      </div>
+      <div class="well">
+
+        <% if params[:plan] == '2' %>
+          <%= render "pro_form" %>
+        <% else %>
+          <%= render "basic_form" %>
         <% end %>
         <%= render "devise/shared/links" %>
       </div>
